@@ -16,6 +16,7 @@ pipeline {
         
         stage('install trufflehog') {
             steps{
+            sh 'python3 --version'
            sh 'pip install truffleHog'
            }
         }

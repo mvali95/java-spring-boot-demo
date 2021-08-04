@@ -12,7 +12,7 @@ pipeline {
               git(
                   url: 'https://dso-user@github.com/dso-user/java-spring-boot-demo-template.git',
                   credentialsId: 'jenkins',
-                  branch: "main"
+                  branch: "master"
                  )
             }
         }

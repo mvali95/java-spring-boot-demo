@@ -15,13 +15,16 @@ pipeline {
         }
         
         stage('install trufflehog') {
+            steps{
            sh 'pip install truffleHog'
-    }
+           }
+        }
         
        stage('Run trufflehog') {
+           steps{
            sh 'truffleHog --regex --entropy=False . --json'
-    }
-        
-        
+      }
+   
+       }      
     }
 }

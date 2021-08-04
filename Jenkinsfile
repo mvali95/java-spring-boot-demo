@@ -6,16 +6,6 @@ pipeline {
         ansiColor('xterm')
     }
     stages {
-        stage('Checkout'){
-            steps {
-              step([$class: 'WsCleanup'])
-              git(
-                  url: 'https://dso-user@github.com/dso-user/java-spring-boot-demo-template.git',
-                  credentialsId: 'jenkins',
-                  branch: "master"
-                 )
-            }
-        }
         stage('Compile & Unit Test'){   
             steps {
                sh "echo Compiling application..."

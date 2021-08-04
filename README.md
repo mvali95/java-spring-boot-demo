@@ -11,5 +11,4 @@ $ mvn spring-boot:run
 $ curl -v localhost:8080/books
 ```
 
-- First line commit.
-- Second line commit.
+- New README.txt

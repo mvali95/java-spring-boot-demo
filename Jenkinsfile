@@ -14,17 +14,13 @@ pipeline {
             
         }
         
-        stage('GitGuardian Scan') {
-            agent {
-                docker { image 'gitguardian/ggshield:latest' }
-            }
-            environment {
-                GITGUARDIAN_API_KEY = credentials('gitguardian key')
-            }
-            steps {
-                sh 'ggshield scan ci'
-            }
-        }
+        stage('install trufflehog') {
+           sh 'pip install truffleHog'
+    }
+        
+       stage('Run trufflehog') {
+           sh 'truffleHog --regex --entropy=False . --json'
+    }
         
         
     }
